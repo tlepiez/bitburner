@@ -52,10 +52,10 @@ export async function main(ns) {
 	mults.strength	number			
 	totalPlaytime	number	
 	mults.work_money	number	
-	
+	  
 	The work system is completely reworked and ns.getPlayer().workChaExpGained no longer exists. 
 	This data is likely available inside ns.getPlayer().currentWork, skills, exp, or hp
-
+  
 	workAgiExpGained	number	
 	workAgiExpGainRate	number	
 	workChaExpGained	number	
@@ -74,7 +74,7 @@ export async function main(ns) {
 	workStrExpGained	number	
 	workStrExpGainRate	number	
 	workType	string	
-	
+	  
 	*/
 	ns.tail();
 	ns.disableLog('ALL');
@@ -83,11 +83,7 @@ export async function main(ns) {
 	ns.print("bitnode n:\t" + ns.getResetInfo().currentNode);
 	ns.print("city:\t" + player.city);
 	ns.print("company:\t" + player.location);
-	if (ns.bladeburner.joinBladeburnerFaction) {
-		ns.print("bladeburner:\t" + ns.bladeburner.getCurrentAction().type + ":"
-			+ ns.bladeburner.getCurrentAction().name);
-		ns.print("rank:\t"+ns.bladeburner.getRank());
-	}
+  
 	ns.print("--- university ---")
 	ns.print("course name:\t" + player.className);
 	//await ns.sleep(10000);
@@ -96,18 +92,18 @@ export async function main(ns) {
 	const jobs = Object.values(player.jobs);
 	//ns.tprint("player.jobs:" + companies);
 	const njobs = companies.length;
-
+  
 	ns.print("Company ( Job )");
 	for (let i = 0; i < njobs; i++) {
-		ns.print("#" + i + ". " + companies[i] + " (" + jobs[i] + ")");
+	  ns.print("#" + i + ". " + companies[i] + " (" + jobs[i] + ")");
 	}
-
+  
 	ns.print("-----------------------");
 	ns.print("Tor router:\t" + player.tor);
 	// player info
 	ns.print("-----------------------");
 	ns.print("HP:\t\t" + player.hp.current + "/" + player.hp.max);
-	ns.print("Money:\t" + ns.nFormat(player.money, "($ 0.00 a)"));
+	ns.print("Money:\t" + ns.formatNumber(player.money, 3));
 	ns.print("Hacking:\t" + ns.getHackingLevel());//player.exp.hacking);
 	ns.print("-----------------------");
 	ns.print("Strength:\t" + player.exp.strength);
@@ -120,13 +116,18 @@ export async function main(ns) {
 	ns.print("--- factions ---")
 	/*
 	if (ns.checkFactionInvitations() != "") {
-		ns.print("Invitations :");
-		ns.print(ns.checkFactionInvitations());
+	  ns.print("Invitations :");
+	  ns.print(ns.checkFactionInvitations());
 	}
 	*/
 	ns.print("Member of :");
 	for (const faction of player.factions) {
-		ns.print(faction);
+	  ns.print(faction);
+	}
+	if (ns.bladeburner.joinBladeburnerFaction) {
+	  ns.print("bladeburner:\t" + ns.bladeburner.getCurrentAction().type + ":"
+		+ ns.bladeburner.getCurrentAction().name);
+	  ns.print("rank:\t" + ns.bladeburner.getRank());
 	}
 	//ns.print("current work:\t" + player.currentWorkFactionName);
 	var work = Object.values(ns.singularity.getCurrentWork());
@@ -171,9 +172,9 @@ export async function main(ns) {
 	#35. CompuTek (IT Intern)
 	#36. KuaiGong International (IT Intern)
 	#37. Solaris Space Systems (IT Intern)
-
+  
 	#38. Bladeburners
-
+  
 	FACTION, gain, worktype, faction name
 	FACTION | 26 | FIELD   | Tetrads
 	FACTION | 33 | HACKING | Tian Di Hui
@@ -190,4 +191,4 @@ export async function main(ns) {
 	FACTION | 25 | HACKING | CyberSec
 	*/
 	ns.print("current work:\t" + work);
-}
+  }

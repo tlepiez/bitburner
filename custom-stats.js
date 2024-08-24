@@ -12,6 +12,7 @@ export async function main(ns) {
 	const doc = document; // This is expensive! (25GB RAM) Perhaps there's a way around it? ;)
 	const hook0 = doc.getElementById('overview-extra-hook-0');
 	const hook1 = doc.getElementById('overview-extra-hook-1');
+	//const hook2 = doc.getElementById('overview-extra-hook-2');
 	var nodeProdSec = 0;
 	var production = 0;
 	var numNodes = ns.hacknet.numNodes();
@@ -41,8 +42,11 @@ export async function main(ns) {
 		// TODO: Add more neat stuff
   
 		// Now drop it into the placeholder elements
+		// 3 columns hook0 | hook1 | hook2
+		// if hook2 is not specified, hook0 and hook1 use the full width
 		hook0.innerText = headers.join("\n");
 		hook1.innerText = values.join("\n");
+		//hook2.innerText = '';
   
 	  } catch (err) { // This might come in handy later
 		ns.print("ERROR: Update Skipped: " + String(err));

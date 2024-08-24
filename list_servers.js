@@ -9,7 +9,6 @@ function recursiveScan(ns, parent, server, route, level) {
 	if (level > maxlevel) {
 		return false
 	}
-	n = n + 1;
 	const children = ns.scan(server);
 	const extra = level > 0 ? "└ (" + level + ")" : "";
 	const servInfo = ns.getServer(server);
@@ -40,6 +39,7 @@ function recursiveScan(ns, parent, server, route, level) {
 			return true;
 		}
 	}
+	n = n + 1;
 	return false;
 }
 
