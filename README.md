@@ -17,6 +17,10 @@ WARNING! I have organized my scripts in a folder named 'scripts', all scripts re
 
 ### basic-hack.js
 largely inspired by the official script, it's the script copied on all servers to gain money and hack experience.
+This script will generate money by hacking a target server.
+    USAGE: run scripts/basic-hack.js SERVER_NAME
+    Example:
+        > run scripts/basic-hack.js n00dles
 
 ### discover-network.js 
 this 
