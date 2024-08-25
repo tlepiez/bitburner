@@ -23,4 +23,11 @@ This script will generate money by hacking a target server.
         > run scripts/basic-hack.js n00dles
 
 ### discover-network.js 
-this 
+this script searches for servers to deploy hack script if server is eligible. Eligibility is based on the number of ports remaining to crack.
+    USAGE: run scripts/discover-nerwork.js [SERVER_NAME [{FULL|STD} [SCRIPT]]] 
+	Examples: (default is FULL)
+		> run scripts/discover-nerwork.js n00dles
+		> run scripts/discover-nerwork.js n00dles {FULL|STD}
+		> run scripts/discover-nerwork.js n00dles {FULL|STD} /scripts/basic-hack.js
+
+### 
