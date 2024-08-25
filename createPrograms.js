@@ -63,5 +63,4 @@ export async function main(ns) {
 		*/
 		await ns.sleep(10000);
 	}
-	ns.spawn("scripts/purchase-servers.js");
 }
